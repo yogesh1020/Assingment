@@ -71,3 +71,9 @@ select Name ,Hiredate,Quota,Sales from Salesreps where Hiredate > @date
 
 7
 
+select p.description, sum(o.customerid) from
+product as p left join order as o
+on p.productid=o.productid
+left join customer as c
+on o.customerid=c.customerid
+groupby(o.productid)
