@@ -1,7 +1,7 @@
 
 
 sp_help 'DirectMarketing.Opportunity'
---End of Step 2
+
 
 ALTER TABLE DirectMarketing.Opportunity
 ALTER COLUMN OpportunityID int NOT NULL;
