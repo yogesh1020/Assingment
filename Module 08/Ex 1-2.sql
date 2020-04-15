@@ -15,6 +15,9 @@ WHERE p.SellEndDate IS NULL AND p.SellStartDate IS NOT NULL;
 GO
 
 
+update vDetails
+set FirstName ='abc' where UserId =2
+
 
 
 CREATE VIEW
