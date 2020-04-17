@@ -48,5 +48,5 @@ begin
  end
 
 Update vEmployeeDetails 
-set Name = 'Johny', Gender = 'Female', DeptName = 'IT' 
+set Name = 'yogesh', Gender = 'Female', DeptName = 'IT' 
 where Id = 1
