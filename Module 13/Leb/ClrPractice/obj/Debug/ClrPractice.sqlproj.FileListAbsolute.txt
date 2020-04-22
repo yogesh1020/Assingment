@@ -1,0 +1,6 @@
+C:\Users\yogesh bhojani\source\repos\ClrPractice\bin\Debug\ClrPractice.dacpac
+C:\Users\yogesh bhojani\source\repos\ClrPractice\bin\Debug\ClrPractice.dll
+C:\Users\yogesh bhojani\source\repos\ClrPractice\bin\Debug\ClrPractice.pdb
+C:\Users\yogesh bhojani\source\repos\ClrPractice\obj\Debug\ClrPractice.sqlprojAssemblyReference.cache
+C:\Users\yogesh bhojani\source\repos\ClrPractice\obj\Debug\ClrPractice.dll
+C:\Users\yogesh bhojani\source\repos\ClrPractice\obj\Debug\ClrPractice.pdb
