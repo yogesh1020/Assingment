@@ -1,0 +1,6 @@
+C:\Users\yogesh bhojani\source\repos\ClrDemo\bin\Debug\ClrDemo.dacpac
+C:\Users\yogesh bhojani\source\repos\ClrDemo\bin\Debug\ClrDemo.dll
+C:\Users\yogesh bhojani\source\repos\ClrDemo\bin\Debug\ClrDemo.pdb
+C:\Users\yogesh bhojani\source\repos\ClrDemo\obj\Debug\ClrDemo.sqlprojAssemblyReference.cache
+C:\Users\yogesh bhojani\source\repos\ClrDemo\obj\Debug\ClrDemo.dll
+C:\Users\yogesh bhojani\source\repos\ClrDemo\obj\Debug\ClrDemo.pdb
