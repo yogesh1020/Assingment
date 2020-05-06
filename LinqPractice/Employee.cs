@@ -32,6 +32,30 @@ namespace LinqPractice
             };
             incentivesList.Add(incentives2);
 
+            Incentives incentives3 = new Incentives()
+            {
+                EmployeeId = 3,
+                IncentiveDate = new DateTime(2013, 02, 01),
+                IncentivesAmount = 4000
+            };
+            incentivesList.Add(incentives3);
+
+            Incentives incentives4 = new Incentives()
+            {
+                EmployeeId = 1,
+                IncentiveDate = new DateTime(2013, 01, 01),
+                IncentivesAmount = 4500
+            };
+            incentivesList.Add(incentives4);
+
+            Incentives incentives5 = new Incentives()
+            {
+                EmployeeId = 2,
+                IncentiveDate = new DateTime(2013, 02, 01),
+                IncentivesAmount = 3500
+            };
+            incentivesList.Add(incentives5);
+
             return incentivesList;
         }
 
@@ -78,6 +102,63 @@ namespace LinqPractice
                 Department = "Insurance",
             };
             employeeList.Add(employee2);
+
+            Employee employee3 = new Employee()
+            {
+                EmployeeId = 3,
+                FirstName = "Roy",
+                LastName = "Thomas",
+                Salary = 700000,
+                JoiningDate = new DateTime(2013, 02, 01),
+                Department = "Banking",
+            };
+            employeeList.Add(employee3);
+
+            Employee employee4 = new Employee()
+            {
+                EmployeeId = 4,
+                FirstName = "Tom",
+                LastName = "Jose",
+                Salary = 600000,
+                JoiningDate = new DateTime(2013, 02, 01),
+                Department = "Insurance",
+            };
+            employeeList.Add(employee4);
+
+            Employee employee5 = new Employee()
+            {
+                EmployeeId = 5,
+                FirstName = "Jerry  ",
+                LastName = "Pinto",
+                Salary = 650000,
+                JoiningDate = new DateTime(2013, 02, 01),
+                Department = "Insurance",
+            };
+            employeeList.Add(employee5);
+
+            Employee employee6 = new Employee()
+            {
+                EmployeeId = 6,
+                FirstName = "Philip",
+                LastName = "Methew",
+                Salary = 750000,
+                JoiningDate = new DateTime(2013, 01, 01),
+                Department = "Service",
+            };
+            employeeList.Add(employee6);
+
+            Employee employee7 = new Employee()
+            {
+                EmployeeId = 7,
+                FirstName = "TestName2  ",
+                LastName = "Lname%",
+                Salary = 600000,
+                JoiningDate = new DateTime(2013, 01, 01),
+                Department = "Insurance",
+            };
+            employeeList.Add(employee7);
+
+
             var results = employeeList.Select(a =>new Employee {FirstName = a.FirstName , LastName = a.LastName }).ToList();
             Console.WriteLine(results);      
             foreach(var res in results)
@@ -332,8 +413,7 @@ namespace LinqPractice
 
 
 
-            var rep = from e in employeeList select e.LastName.Replace("%"," ");
-   
+            var rep = employeeList.Select(a => a.LastName).ToList();
             foreach (var res in rep)
             {
                 Console.WriteLine("{0}");
@@ -372,21 +452,28 @@ namespace LinqPractice
             }
             Console.WriteLine("45----------------------------------------------------------------------------------------------");
 
-            var max = from e in employeeList where e.Department == e.Department select new { e.Salary };
+            /*var max = from e in employeeList where e.Department == e.Department select new { e.Salary };
             var m = max.Max();
             foreach (var res in dep)
             {
                 Console.WriteLine("{0},{1}", res.Department, m);
             }
             Console.WriteLine("46----------------------------------------------------------------------------------------------");
-
-            var min = from e in employeeList where e.Department == e.Department select new { e.Salary };
-            var mn = max.Min();
-            foreach (var res in dep)
+*/
+            var minSalary = (from e in employeeList
+                             group e by new { e.Department } into department
+                             select new
+                             {
+                                 department,
+                                 averageSalary = department.Min(s => s.Salary)
+                             }).OrderByDescending(t => t.averageSalary);
+            foreach (var res in minSalary)
             {
-                Console.WriteLine("{0},{1}", res.Department, mn);
+                Console.WriteLine("{0},{1}", res.department ,res.averageSalary);
             }
             Console.WriteLine("46----------------------------------------------------------------------------------------------");
+
+
 
             var number = from e in employeeList where e.JoiningDate == e.JoiningDate select e;
             var no = number.Count();
@@ -459,15 +546,31 @@ namespace LinqPractice
             Console.WriteLine("52----------------------------------------------------------------------------------------------");
 */
 
-            var top2 = (from e in employeeList orderby e.Salary select e).Take(2);
+            var top2 = (from e in employeeList orderby e.Salary descending select e).Take(2);
+            
             foreach (var res in top2)
             {
-                Console.WriteLine("{0},{1}", res.FirstName, res.Salary);
+                Console.WriteLine("{0}", res.Salary);
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------");
 
 
+            var hi2 = (from e in employeeList orderby e.Salary descending select e).Take(2).TakeLast(1);
 
+            foreach (var res in hi2)
+            {
+                Console.WriteLine("{0}", res.Salary);
+            }
+            Console.WriteLine("----------------------------------------------------------------------------------------------");
+
+            var salpr = from e in employeeList
+                        select new
+                        {
+                          name1 =  e.FirstName == "John",
+                            name2 = e.FirstName=="Roy",
+                            name3 = e.FirstName == ""
+
+                        };
 
             return employeeList;
         }
