@@ -459,11 +459,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yogesh bhojani\\source\\repos\\LinqPractice\\LinqPractice.csproj",
+      "projectUniqueName": "D:\\New folder\\Assingment\\LinqPractice\\LinqPractice.csproj",
       "projectName": "LinqPractice",
-      "projectPath": "C:\\Users\\yogesh bhojani\\source\\repos\\LinqPractice\\LinqPractice.csproj",
+      "projectPath": "D:\\New folder\\Assingment\\LinqPractice\\LinqPractice.csproj",
       "packagesPath": "C:\\Users\\yogesh bhojani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yogesh bhojani\\source\\repos\\LinqPractice\\obj\\",
+      "outputPath": "D:\\New folder\\Assingment\\LinqPractice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yogesh bhojani\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -566,11 +566,16 @@ namespace LinqPractice
             var salpr = from e in employeeList
                         select new
                         {
-                          name1 =  e.FirstName == "John",
-                            name2 = e.FirstName=="Roy",
-                            name3 = e.FirstName == ""
+                            total = e.Salary,
+                            Number = e.FirstName,
+                            salary = e.FirstName == "John" ? Convert.ToDouble(e.Salary) * 0.2 :
+                          e.FirstName == "Roy" ? Convert.ToDouble(e.Salary) * .10 : Convert.ToDouble(e.Salary) * .15
 
-                        };
+                        };var totalsal = from e in employeeList select e.Salary;
+            foreach(var res in salpr)
+            {
+                Console.WriteLine("salary : {0} , total : {1}",res.salary,res.total);
+            }
 
             return employeeList;
         }
